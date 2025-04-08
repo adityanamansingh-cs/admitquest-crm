@@ -1,0 +1,42 @@
+[2025-04-08T08:44:02.835Z] ERROR: Failed to initialize admin panel: router.use is not a function
+[2025-04-08T08:44:39.144Z] ERROR: Failed to initialize admin panel: router.use is not a function
+[2025-04-08T08:44:53.588Z] ERROR: Failed to initialize admin panel: router.use is not a function
+[2025-04-08T08:49:08.071Z] ERROR: Failed to create admin user: Unknown column 'role' in 'field list'
+[2025-04-08T08:50:10.594Z] ERROR: Failed to create admin user: Unknown column 'role' in 'field list'
+[2025-04-08T08:50:23.904Z] ERROR: Failed to create admin user: Unknown column 'role' in 'field list'
+[2025-04-08T08:50:56.873Z] ERROR: Failed to create admin user: Unknown column 'deleted_at' in 'field list'
+[2025-04-08T08:54:32.841Z] ERROR: POST /admin/login 500 - 21ms
+[2025-04-08T08:55:36.687Z] ERROR: GET /admin/api/resources/applications/actions/list 500 - 33ms
+[2025-04-08T08:55:36.717Z] ERROR: GET /admin/api/resources/institutes/actions/search 500 - 62ms
+[2025-04-08T08:55:36.724Z] ERROR: GET /admin/api/resources/students/actions/search 500 - 68ms
+[2025-04-08T08:55:36.740Z] ERROR: GET /admin/api/resources/carts/actions/search 500 - 71ms
+[2025-04-08T08:55:37.704Z] ERROR: GET /admin/api/resources/institutes/actions/search 500 - 34ms
+[2025-04-08T08:55:37.715Z] ERROR: GET /admin/api/resources/students/actions/list 500 - 46ms
+[2025-04-08T08:55:41.364Z] ERROR: GET /admin/api/resources/states/actions/search 500 - 5ms
+[2025-04-08T08:55:41.371Z] ERROR: GET /admin/api/resources/institutes/actions/list 500 - 13ms
+[2025-04-08T08:55:46.008Z] ERROR: GET /admin/api/resources/cities/actions/list 500 - 12ms
+[2025-04-08T08:57:59.526Z] ERROR: GET /admin/api/resources/applications/actions/list 500 - 51ms
+[2025-04-08T09:13:11.770Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlmDPR3vk8wnkpoiCwIcA61dVBhE-35zllxKMnJtUhkDi8ONovKlCWA4C-M84hyLYA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=none 500 - 427ms
+[2025-04-08T09:13:38.224Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlkSL24ifao21GaGYnWjDiww_N2e6IyEAiFqHqkXFX5_tOMcQGTqJRmkAbKMX1cf_g&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&hd=sunstone.in&prompt=none 500 - 471ms
+[2025-04-08T09:26:54.856Z] ERROR: GET /admin/api/resources/states/actions/search 500 - 6ms
+[2025-04-08T09:26:54.878Z] ERROR: GET /admin/api/resources/institutes/actions/list 500 - 28ms
+[2025-04-08T09:27:04.708Z] ERROR: GET /admin/api/resources/institutes/actions/list 500 - 35ms
+[2025-04-08T09:29:09.517Z] ERROR: GET /admin/api/resources/streams/actions/search 500 - 11ms
+[2025-04-08T09:29:09.520Z] ERROR: GET /admin/api/resources/courses/actions/list 500 - 14ms
+[2025-04-08T09:29:21.256Z] ERROR: GET /admin/api/resources/streams/actions/search 500 - 14ms
+[2025-04-08T09:30:20.032Z] ERROR: GET /admin/api/resources/specializations/actions/search 500 - 7ms
+[2025-04-08T09:30:20.060Z] ERROR: GET /admin/api/resources/programs/actions/list 500 - 35ms
+[2025-04-08T09:30:28.813Z] ERROR: GET /admin/api/resources/specializations/actions/search 500 - 8ms
+[2025-04-08T09:32:32.612Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlnh9BJwjECvxm1X8l3YRMxokrWIR8M4v6Mirt-w8mosGzkF-felRjabCZ2PawwZlg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=sunstone.in&prompt=none 500 - 450ms
+[2025-04-08T09:33:13.485Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlnh9BJwjECvxm1X8l3YRMxokrWIR8M4v6Mirt-w8mosGzkF-felRjabCZ2PawwZlg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=sunstone.in&prompt=none 500 - 167ms
+[2025-04-08T09:33:32.876Z] ERROR: GET /admin/api/resources/specializations/actions/search 500 - 45ms
+[2025-04-08T09:33:32.879Z] ERROR: GET /admin/api/resources/programs/actions/list 500 - 49ms
+[2025-04-08T09:33:35.258Z] ERROR: GET /admin/api/resources/countries/actions/search 500 - 7ms
+[2025-04-08T09:33:35.258Z] ERROR: GET /admin/api/resources/states/actions/list 500 - 10ms
+[2025-04-08T09:33:45.509Z] ERROR: GET /admin/api/resources/specializations/actions/list 500 - 5ms
+[2025-04-08T09:48:23.001Z] ERROR: GET /admin/api/resources/states/records/64/show 500 - 31ms
+[2025-04-08T09:48:23.035Z] ERROR: GET /admin/api/resources/states/records/64/show 500 - 24ms
+[2025-04-08T09:53:47.415Z] ERROR: GET /admin/api/resources/specializations/actions/list 500 - 24ms
+[2025-04-08T10:18:49.408Z] ERROR: GET /admin/api/resources/states/records/95/show 500 - 8ms
+[2025-04-08T10:32:41.624Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlkOSFO0CkGNVRvFgYs8f-yQ4AO6TPG0M6IAnszlbKYg_JHQDLQIyScP-_KOiPSalA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&hd=sunstone.in&prompt=none 500 - 222ms
+[2025-04-08T10:32:42.768Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlkOSFO0CkGNVRvFgYs8f-yQ4AO6TPG0M6IAnszlbKYg_JHQDLQIyScP-_KOiPSalA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&hd=sunstone.in&prompt=none 500 - 90ms

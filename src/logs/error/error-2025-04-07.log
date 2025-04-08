@@ -1,0 +1,13 @@
+[2025-04-07T04:37:58.369Z] ERROR: GET /api/utils/collegecard?course_id=1&institute_id=1 500 - 21ms
+[2025-04-07T07:42:07.352Z] ERROR: PATCH /api/user/profile 500 - 25ms
+[2025-04-07T08:52:16.630Z] ERROR: POST /api/users/applications/create 500 - 19ms
+[2025-04-07T11:00:17.135Z] ERROR: Error in findCollegesByStateAndCourseId:
+[2025-04-07T11:00:17.137Z] ERROR: GET /api/utils/colleges/by-state-and-course?course_id=1&state_ids=95&page=1&limit=10 500 - 108ms
+[2025-04-07T11:00:20.716Z] ERROR: Error in findCollegesByStateAndCourseId:
+[2025-04-07T11:00:20.718Z] ERROR: GET /api/utils/colleges/by-state-and-course?course_id=1&state_ids=95&page=1&limit=10 500 - 49ms
+[2025-04-07T11:00:54.189Z] ERROR: Error in findCollegesByStateAndCourseId:
+[2025-04-07T11:00:54.190Z] ERROR: GET /api/utils/colleges/by-state-and-course?course_id=1&state_ids=95&page=1&limit=10 500 - 53ms
+[2025-04-07T11:00:59.810Z] ERROR: Error in findCollegesByStateAndCourseId:
+[2025-04-07T11:00:59.810Z] ERROR: GET /api/utils/colleges/by-state-and-course?course_id=1&state_ids=95&page=1&limit=10 500 - 38ms
+[2025-04-07T11:01:04.652Z] ERROR: Error in findCollegesByStateAndCourseId:
+[2025-04-07T11:01:04.653Z] ERROR: GET /api/utils/colleges/by-state-and-course?course_id=1&state_ids=95&page=1&limit=10 500 - 45ms

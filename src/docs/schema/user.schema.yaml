@@ -1,0 +1,418 @@
+components:
+    schemas:
+        User:
+            type: object
+            required:
+                - id
+                - name
+                - mobile
+                - email
+                - status
+            properties:
+                id:
+                    type: number
+                    description: "Unique identifier for the user"
+                    example: 1
+                name:
+                    type: string
+                    minLength: 1
+                    maxLength: 255
+                    description: "Full name of the user"
+                    example: "John Doe"
+                mobile:
+                    type: string
+                    pattern: "^[6-9]\\d{9}$"
+                    description: "Mobile number of the user"
+                    example: "7500006161"
+                email:
+                    type: string
+                    format: email
+                    maxLength: 255
+                    description: "Email address of the user"
+                    example: "john@example.com"
+                course_id:
+                    type: number
+                    description: "ID of the course user is enrolled in"
+                    example: 1
+                image:
+                    type: string
+                    maxLength: 255
+                    description: "URL of the user's profile image"
+                    example: "https://example.com/image.jpg"
+                status:
+                    type: string
+                    enum: ['0', '1', '2']
+                    description: "User status (0: Inactive, 1: Active, 2: Blocked)"
+                    example: "1"
+                is_mobile_verified:
+                    type: boolean
+                    description: "Whether the mobile number is verified"
+                    example: true
+                is_email_verified:
+                    type: boolean
+                    description: "Whether the email is verified"
+                    example: false
+                created_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the user was created"
+                updated_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the user was last updated"
+
+        UserResponse:
+            type: object
+            required:
+                - message
+                - user
+            properties:
+                message:
+                    type: string
+                    description: "Response message"
+                    example: "User data fetched"
+                user:
+                    $ref: '#/components/schemas/User'
+
+        UpdateUserRequest:
+            type: object
+            properties:
+                name:
+                    type: string
+                    minLength: 1
+                    maxLength: 255
+                    description: "Full name of the user"
+                    example: "John Doe"
+                email:
+                    type: string
+                    format: email
+                    maxLength: 255
+                    description: "Email address of the user"
+                    example: "john@example.com"
+                course_id:
+                    type: number
+                    description: "ID of the course user is enrolled in"
+                    example: 1
+                image:
+                    type: string
+                    maxLength: 255
+                    description: "URL of the user's profile image"
+                    example: "https://example.com/image.jpg"
+
+        Application:
+            type: object
+            required:
+                - cart_id
+                - student_id
+                - institute_id
+                - course_id
+                - final_amount
+                - payable_amount
+                - added_by
+                - status
+            properties:
+                id:
+                    type: number
+                    description: "Unique identifier for the application"
+                    example: 1
+                cart_id:
+                    type: number
+                    description: "ID of the cart associated with the application"
+                    example: 1
+                student_id:
+                    type: number
+                    description: "ID of the student who created the application"
+                    example: 1
+                institute_id:
+                    type: number
+                    description: "ID of the institute"
+                    example: 1
+                course_id:
+                    type: number
+                    description: "ID of the course"
+                    example: 1
+                institute_program_id:
+                    type: number
+                    nullable: true
+                    description: "ID of the institute program"
+                    example: 1
+                final_amount:
+                    type: number
+                    format: decimal
+                    description: "Final amount to be paid after discounts"
+                    example: 1000.00
+                payable_amount:
+                    type: number
+                    format: decimal
+                    description: "Total payable amount before discounts"
+                    example: 1200.00
+                added_by:
+                    type: string
+                    enum: [admin, student]
+                    description: "Who added the application"
+                    example: "student"
+                status:
+                    type: string
+                    enum: ['0', '1', '2']
+                    description: "Application status (0: Deleted, 1: Running, 2: Expired)"
+                    example: "1"
+                created_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the application was created"
+                updated_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the application was last updated"
+                deleted_at:
+                    type: string
+                    format: date-time
+                    nullable: true
+                    description: "Timestamp when the application was soft deleted"
+                course:
+                    $ref: '#/components/schemas/Course'
+                institute:
+                    $ref: '#/components/schemas/Institute'
+                cart:
+                    $ref: '#/components/schemas/Cart'
+                institute_program:
+                    $ref: '#/components/schemas/InstituteProgram'
+
+        ApplicationsResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    description: "Response message"
+                    example: "Application data fetched"
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Application'
+
+        ApplicationResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    description: "Response message"
+                    example: "Application created successfully"
+                data:
+                    $ref: '#/components/schemas/Application'
+
+        CreateApplicationRequest:
+            type: object
+            required:
+                - institute_course_summary_id
+                - institute_program_id
+            properties:
+                institute_course_summary_id:
+                    type: number
+                    description: "ID of the institute course summary"
+                    example: 1
+                institute_program_id:
+                    type: number
+                    description: "ID of the institute program"
+                    example: 1
+
+        RemoveApplicationRequest:
+            type: object
+            required:
+                - application_id
+            properties:
+                application_id:
+                    type: number
+                    description: "ID of the application to remove"
+                    example: 1
+
+        Course:
+            type: object
+            required:
+                - name
+                - status
+            description: "Course details"
+            properties:
+                id:
+                    type: number
+                    description: "Unique identifier for the course"
+                    example: 1
+                name:
+                    type: string
+                    description: "Name of the course"
+                    example: "Computer Science Engineering"
+                description:
+                    type: string
+                    description: "Detailed description of the course"
+                    example: "Bachelor's degree in Computer Science and Engineering"
+                status:
+                    type: string
+                    enum: ['0', '1']
+                    description: "Course status (0: Inactive, 1: Active)"
+                    example: "1"
+                created_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the course was created"
+                updated_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the course was last updated"
+
+        Institute:
+            type: object
+            required:
+                - name
+                - status
+            description: "Institute details"
+            properties:
+                id:
+                    type: number
+                    description: "Unique identifier for the institute"
+                    example: 1
+                name:
+                    type: string
+                    description: "Name of the institute"
+                    example: "Example University"
+                description:
+                    type: string
+                    description: "Detailed description of the institute"
+                    example: "A leading university in technology education"
+                status:
+                    type: string
+                    enum: ['0', '1']
+                    description: "Institute status (0: Inactive, 1: Active)"
+                    example: "1"
+                created_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the institute was created"
+                updated_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the institute was last updated"
+
+        Cart:
+            type: object
+            required:
+                - student_id
+                - institute_id
+                - course_id
+                - total_amount
+                - discount_amount
+                - final_amount
+                - status
+            description: "Cart details"
+            properties:
+                id:
+                    type: number
+                    description: "Unique identifier for the cart"
+                    example: 1
+                student_id:
+                    type: number
+                    description: "ID of the student who owns the cart"
+                    example: 1
+                institute_id:
+                    type: number
+                    description: "ID of the institute"
+                    example: 1
+                course_id:
+                    type: number
+                    description: "ID of the course"
+                    example: 1
+                total_amount:
+                    type: number
+                    format: decimal
+                    description: "Total amount before discounts"
+                    example: 1200.00
+                discount_amount:
+                    type: number
+                    format: decimal
+                    description: "Discount amount"
+                    example: 200.00
+                final_amount:
+                    type: number
+                    format: decimal
+                    description: "Final amount after discounts"
+                    example: 1000.00
+                status:
+                    type: string
+                    enum: ['0', '1', '2']
+                    description: "Cart status (0: Deleted, 1: Active, 2: Expired)"
+                    example: "1"
+                created_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the cart was created"
+                updated_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the cart was last updated"
+                deleted_at:
+                    type: string
+                    format: date-time
+                    nullable: true
+                    description: "Timestamp when the cart was soft deleted"
+
+        CartsResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    description: "Response message"
+                    example: "Cart data fetched"
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Cart'
+
+        InstituteProgram:
+            type: object
+            required:
+                - name
+                - status
+            description: "Institute program details"
+            properties:
+                id:
+                    type: number
+                    description: "Unique identifier for the institute program"
+                    example: 1
+                name:
+                    type: string
+                    description: "Name of the program"
+                    example: "B.Tech Program"
+                description:
+                    type: string
+                    description: "Detailed description of the program"
+                    example: "4-year Bachelor of Technology program"
+                status:
+                    type: string
+                    enum: ['0', '1']
+                    description: "Program status (0: Inactive, 1: Active)"
+                    example: "1"
+                created_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the program was created"
+                updated_at:
+                    type: string
+                    format: date-time
+                    description: "Timestamp when the program was last updated"
+
+        ErrorResponse:
+            type: object
+            required:
+                - message
+            properties:
+                message:
+                    type: string
+                    description: Error message
+                    example: "An error occurred"

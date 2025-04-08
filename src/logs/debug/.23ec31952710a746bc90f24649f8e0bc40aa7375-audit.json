@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/adityanamansingh/sites/admitquestai-crm/src/logs/debug/.23ec31952710a746bc90f24649f8e0bc40aa7375-audit.json",
+    "files": [
+        {
+            "date": 1744100004488,
+            "name": "/Users/adityanamansingh/sites/admitquestai-crm/src/logs/debug/debug-2025-04-08.log",
+            "hash": "2eafc1a7ac3d439780a7339296f3334d37c58c44654eee245eefe0e9ee994823"
+        }
+    ],
+    "hashType": "sha256"
+}

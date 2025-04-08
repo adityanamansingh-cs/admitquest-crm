@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/adityanamansingh/sites/admitquestai/src/logs/debug/.07ccef85d65524f4ae5f96fbf7fb9c4adfd8f6dd-audit.json",
+    "files": [
+        {
+            "date": 1743999923445,
+            "name": "/Users/adityanamansingh/sites/admitquestai/src/logs/debug/debug-2025-04-07.log",
+            "hash": "f686ca0adf0a9a819b3ab0e6a422921831a3f4801f1caec456ce38f9ae0c3132"
+        },
+        {
+            "date": 1744085781478,
+            "name": "/Users/adityanamansingh/sites/admitquestai/src/logs/debug/debug-2025-04-08.log",
+            "hash": "d2ae880165d80f80ae04cf216c715291ebf2ca220791ba8fe2f44cb4518cff42"
+        }
+    ],
+    "hashType": "sha256"
+}

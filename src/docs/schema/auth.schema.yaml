@@ -1,0 +1,113 @@
+components: 
+    schemas:
+        signup:
+            type: object
+            required: 
+                - mobile
+            properties: 
+                name: 
+                    type: string
+                    minLength: 1
+                    maxLength: 255
+                    example: "Aditya Naman Singh"
+                    description: "Optional name of the user"
+                mobile:
+                    type: string
+                    pattern: "^[6-9]\\d{9}$"
+                    example: "7055965478"
+                    description: "Mobile number of the user"
+
+        verifyOtp:
+            type: object
+            required:
+                - otp
+                - mobile
+            properties:
+                otp:
+                    type: string
+                    minLength: 4
+                    maxLength: 4
+                    pattern: "^\\d{4}$"
+                    example: "3039"
+                    description: "4-digit OTP sent to mobile number"
+                mobile:
+                    type: string
+                    pattern: "^[6-9]\\d{9}$"
+                    example: "7500006161"
+                    description: "Mobile number to verify"
+
+        signin:
+            type: object
+            required:
+                - mobile
+            properties:
+                mobile:
+                    type: string
+                    pattern: "^[6-9]\\d{9}$"
+                    example: "7500006161"
+                    description: "Mobile number for sign in"
+
+        refreshToken:
+            type: object
+            required:
+                - refreshToken
+            properties:
+                refreshToken:
+                    type: string
+                    description: "JWT refresh token"
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJpYXQiOjE3NDIyNzE3NzB9.DxcaeKMat4arEi7N52Pjpm7f8VUlwDGo0ufNvjp2mbE"
+
+        AuthResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    description: "Response message"
+                    example: "Operation successful"
+                data:
+                    type: object
+                    properties:
+                        student:
+                            type: object
+                            properties:
+                                id:
+                                    type: number
+                                    description: "Unique identifier for the user"
+                                    example: 1
+                                name:
+                                    type: string
+                                    description: "Full name of the user"
+                                    example: "John Doe"
+                                mobile:
+                                    type: string
+                                    description: "Mobile number of the user"
+                                    example: "7500006161"
+                                email:
+                                    type: string
+                                    format: email
+                                    description: "Email address of the user"
+                                    example: "john@example.com"
+                                status:
+                                    type: string
+                                    enum: ['0', '1', '2']
+                                    description: "User status (0: Inactive, 1: Active, 2: Blocked)"
+                                    example: "1"
+                                is_mobile_verified:
+                                    type: boolean
+                                    description: "Whether the mobile number is verified"
+                                    example: true
+                                is_email_verified:
+                                    type: boolean
+                                    description: "Whether the email is verified"
+                                    example: false
+                        accessToken:
+                            type: string
+                            description: "JWT access token"
+                            example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                        refreshToken:
+                            type: string
+                            description: "JWT refresh token"
+                            example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."

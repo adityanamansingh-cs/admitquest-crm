@@ -1,0 +1,348 @@
+components:
+    schemas:
+        Course:
+            type: object
+            required:
+                - id
+                - name
+                - display_name
+                - short_name
+            properties:
+                id:
+                    type: integer
+                    example: 2
+                    description: "Unique identifier for the course"
+                name:
+                    type: string
+                    example: "MBA / PGDM"
+                    description: "Internal name/identifier of the course"
+                display_name:
+                    type: string
+                    example: "MBA"
+                    description: "Human-readable display name of the course"
+                short_name:
+                    type: string
+                    example: "MBA / PGDM"
+                    description: "Abbreviated or alternative name of the course"
+
+        State:
+            type: object
+            required:
+                - id
+                - name
+            properties:
+                id:
+                    type: integer
+                    example: 1
+                    description: "Unique identifier for the state"
+                name:
+                    type: string
+                    example: "Maharashtra"
+                    description: "Name of the state"
+
+        City:
+            type: object
+            required:
+                - id
+                - name
+            properties:
+                id:
+                    type: integer
+                    example: 1
+                    description: "Unique identifier for the city"
+                name:
+                    type: string
+                    example: "Mumbai"
+                    description: "Name of the city"
+                state_id:
+                    type: integer
+                    example: 1
+                    description: "ID of the state this city belongs to"
+
+        CourseFlag:
+            type: string
+            enum: [main, ug, pg, all]
+            description: Type of courses to retrieve
+            example: "pg"
+
+        CoursesResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    example: "Successfully fetched pg courses."
+                    description: "Response message indicating the status and type of courses fetched"
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Course'
+                    description: "Array of course objects"
+
+        StatesResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    example: "Successfully fetched states."
+                    description: "Response message"
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/State'
+                    description: "Array of state objects"
+
+        CitiesResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    example: "Successfully fetched cities for state ID: 1"
+                    description: "Response message"
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/City'
+                    description: "Array of city objects"
+
+        CoursewiseInstituteCount:
+            type: object
+            required:
+                - state_id
+                - state_name
+                - institute_count
+            properties:
+                state_id:
+                    type: integer
+                    example: 67
+                    description: "Unique identifier for the state"
+                state_name:
+                    type: string
+                    example: "Bihar"
+                    description: "Name of the state"
+                institute_count:
+                    type: integer
+                    example: 25
+                    description: "Number of institutes offering the course in this state"
+
+        CoursewiseInstitutesResponse:
+            type: object
+            required:
+                - message
+                - data
+            properties:
+                message:
+                    type: string
+                    example: "Successfully fetched institute counts by state"
+                    description: "Response message"
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/CoursewiseInstituteCount'
+                    description: "Array of state-wise institute counts"
+
+        InstituteRank:
+            type: object
+            properties:
+                rank:
+                    type: number
+                    example: 1
+                out_of:
+                    type: number
+                    example: 100
+                year:
+                    type: number
+                    example: 2024
+                ranking_body:
+                    type: string
+                    example: "nirf"
+
+        Institute:
+            type: object
+            properties:
+                id:
+                    type: number
+                    example: 1291
+                name:
+                    type: string
+                    example: "Gaya College"
+                logo:
+                    type: string
+                    example: "https://example.com/logo.png"
+                google_rating:
+                    type: number
+                    example: 4.5
+                institute_rank:
+                    $ref: '#/components/schemas/InstituteRank'
+                last_date_to_apply:
+                    type: string
+                    format: date-time
+                    example: "2024-05-31T23:59:59Z"
+
+        StateWithInstitutes:
+            type: object
+            properties:
+                state_id:
+                    type: number
+                    example: 67
+                state_name:
+                    type: string
+                    example: "Bihar"
+                institutes:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Institute'
+
+        Pagination:
+            type: object
+            properties:
+                total:
+                    type: integer
+                    example: 100
+                    description: Total number of records
+                totalPages:
+                    type: integer
+                    example: 10
+                    description: Total number of pages
+                currentPage:
+                    type: integer
+                    example: 1
+                    description: Current page number
+                limit:
+                    type: integer
+                    example: 10
+                    description: Number of items per page
+
+        CollegesByStateResponse:
+            type: object
+            properties:
+                message:
+                    type: string
+                    example: "Successfully fetched colleges"
+                filter:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Filter'
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/StateWithInstitutes'
+                pagination:
+                    $ref: '#/components/schemas/Pagination'
+
+        StateInstituteCount:
+            type: object
+            properties:
+                state_id:
+                    type: number
+                    example: 67
+                state_name:
+                    type: string
+                    example: "Bihar"
+                institute_count:
+                    type: number
+                    example: 25
+
+        FilterData:
+            type: object
+            properties:
+                name:
+                    type: string
+                    example: "Below 5 lakhs"
+                min:
+                    type: number
+                    example: 0
+                max:
+                    type: number
+                    example: 500000
+
+        FilterFeature:
+            type: object
+            properties:
+                id:
+                    type: number
+                    example: 1
+                name:
+                    type: string
+                    example: "Scholarships"
+
+        FilterFeatures:
+            type: object
+            properties:
+                admitquest:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FilterFeature'
+                students:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FilterFeature'
+                others:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FilterFeature'
+
+        FilterSelected:
+            type: object
+            properties:
+                min:
+                    type: number
+                    example: 300000
+                max:
+                    type: number
+                    example: 500000
+
+        FilterFeatureSelected:
+            type: object
+            properties:
+                admitquest:
+                    type: array
+                    items:
+                        type: string
+                    example: ["1", "2"]
+                students:
+                    type: string
+                    example: "2"
+
+        Filter:
+            type: object
+            properties:
+                id:
+                    type: string
+                    example: "fees"
+                name:
+                    type: string
+                    example: "Fees Range"
+                min:
+                    type: number
+                    example: 200000
+                max:
+                    type: number
+                    example: 5000000
+                data_type:
+                    type: string
+                    example: "pills"
+                data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FilterData'
+                selected:
+                    oneOf:
+                        - $ref: '#/components/schemas/FilterSelected'
+                        - $ref: '#/components/schemas/FilterFeatureSelected'
+                features:
+                    $ref: '#/components/schemas/FilterFeatures'
+                exams:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/FilterFeature'
+
+       
