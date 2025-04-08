@@ -46,12 +46,6 @@ appServer.options('*', cors(corsOptions));
 // Serve static files from public directory
 appServer.use(express.static('public'));
 
-// Serve admin CSS
-appServer.use('/admin.css', express.static(path.join(__dirname, 'modules/admin/components/admin.css')));
-
-// Serve admin custom script
-appServer.use('/custom-styles.js', express.static(path.join(__dirname, 'modules/admin/components/custom-styles.js')));
-
 // Session configuration for OAuth
 appServer.use(
     session({

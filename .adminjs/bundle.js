@@ -1,0 +1,8 @@
+(function () {
+	'use strict';
+
+	AdminJS.UserComponents = {};
+	AdminJS.env.ADMIN_IS_AUTHENTICATED = "false";
+
+})();
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnVuZGxlLmpzIiwic291cmNlcyI6WyJlbnRyeS5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJBZG1pbkpTLlVzZXJDb21wb25lbnRzID0ge31cbkFkbWluSlMuZW52LkFETUlOX0lTX0FVVEhFTlRJQ0FURUQgPSBcImZhbHNlXCJcbiJdLCJuYW1lcyI6WyJBZG1pbkpTIiwiVXNlckNvbXBvbmVudHMiLCJlbnYiLCJBRE1JTl9JU19BVVRIRU5USUNBVEVEIl0sIm1hcHBpbmdzIjoiOzs7Q0FBQUEsT0FBTyxDQUFDQyxjQUFjLEdBQUcsRUFBRTtDQUMzQkQsT0FBTyxDQUFDRSxHQUFHLENBQUNDLHNCQUFzQixHQUFHLE9BQU87Ozs7OzsifQ==

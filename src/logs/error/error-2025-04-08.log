@@ -40,3 +40,11 @@
 [2025-04-08T10:18:49.408Z] ERROR: GET /admin/api/resources/states/records/95/show 500 - 8ms
 [2025-04-08T10:32:41.624Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlkOSFO0CkGNVRvFgYs8f-yQ4AO6TPG0M6IAnszlbKYg_JHQDLQIyScP-_KOiPSalA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&hd=sunstone.in&prompt=none 500 - 222ms
 [2025-04-08T10:32:42.768Z] ERROR: GET /google/callback?code=4%2F0Ab_5qlkOSFO0CkGNVRvFgYs8f-yQ4AO6TPG0M6IAnszlbKYg_JHQDLQIyScP-_KOiPSalA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&hd=sunstone.in&prompt=none 500 - 90ms
+[2025-04-08T11:34:17.043Z] ERROR: GET /admin/api/resources/specializations/actions/search 500 - 25ms
+[2025-04-08T11:34:17.051Z] ERROR: GET /admin/api/resources/programs/actions/list 500 - 34ms
+[2025-04-08T11:34:27.734Z] ERROR: GET /admin/api/resources/specializations/actions/search 500 - 18ms
+[2025-04-08T11:34:27.742Z] ERROR: GET /admin/api/resources/programs/actions/list 500 - 26ms
+[2025-04-08T11:34:46.034Z] ERROR: GET /admin/api/resources/specializations/actions/search 500 - 8ms
+[2025-04-08T11:34:46.049Z] ERROR: GET /admin/api/resources/programs/actions/list 500 - 23ms
+[2025-04-08T11:34:53.801Z] ERROR: GET /admin/api/resources/specializations/actions/list 500 - 5ms
+[2025-04-08T11:42:13.097Z] ERROR: GET /admin/api/resources/states/records/95/show 500 - 15ms
